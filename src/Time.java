@@ -3,6 +3,13 @@ public class Time {
     private int hour;
     private int minute;
     private int second;
+    public int nextsecond;
+    public int nextminute;
+    public int nexthour;
+    private int singleHour;
+    private int singleMinute;
+    private int singleSecond;
+
 
     Time(int hour, int minute, int second) {
         this.hour = hour;
@@ -45,56 +52,36 @@ public class Time {
     }
 
     public String toString() {
-//hour
-        for(hour >= 0 && hour <=23
-                && minute >= 0 && minute <= 59
-                && second >= 0 && second <= 59) 
-        {
-            if (hour >= 0 && hour <= 9) {
-                System.out.print("\n0" + hour + " ");
-            } else if (hour <= 0 || hour >= 24) {
-                System.out.print("\nInvalid hour");
-            } else {
-                System.out.print("\n" + hour + " ");
-            }
-//minute
-            if (minute >= 0 && minute <= 9) {
-                System.out.print("0" + minute + " ");
-            } else if (minute <= 0 || minute >= 60) {
-                System.out.print("Invalid minute");
-            } else {
-                System.out.print(minute + " ");
-            }
-//second
-            if (second >= 0 && second <= 9) {
-                System.out.print("0" + second + " ");
-            } else if (second <= 0 || second >= 60) {
-                System.out.print("Invalid second");
-            } else {
-                System.out.print(second + " ");
-            }
-            break;
-        }
-        return toString();
+        return nextSecond();
     }
 
     public String nextSecond() {
-        while (second < 60) {
-            second++;
-        }
-        while (second == 60) {
-            second = 0;
-            minute++;
-        }
-        while (minute == 60) {
-            minute = 0;
-            hour++;
-        }
-        while (hour == 24) {
-            hour = 0;
-        }
-        System.out.println(nextSecond());
-        return hour + " " + minute + " " + second;
+
+        for (second = 0; second < 61; second++) {
+            if (hour >= 0 && hour < 10) {
+                System.out.print("\n0" + hour);
+            } else if (hour >= 10 && hour <= 23) {
+                System.out.print("\n" + hour);
+            }
+            if (minute >= 0 && minute < 10) {
+                System.out.print(":0" + minute);
+            } else if (minute >= 10 && minute <= 59) {
+                System.out.print(":" + minute);
+            }
+            if (second == 60) {
+                second = 0;
+                minute++;
+            }
+            if (second >= 0 && second < 10) {
+                System.out.print(":0" + second);
+            } else if (second >= 10 && second <= 59) {
+                System.out.print(":" + second);
+            }
+            else {
+                System.out.print(":invalid number");
+            }
+
+        } return nextSecond();
     }
 }
 
@@ -102,3 +89,9 @@ public class Time {
 
 
 
+
+
+//for (minute = 0; minute < 61; ) {
+  //      if (minute == 60) {
+    //    minute = 0;
+      //  hour++;
