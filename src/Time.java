@@ -159,10 +159,3 @@ public class Time {
 }
 
 
-
-
-
-
-/*while(hour < 0 || hour > 23 || minute < 0 || minute > 59 || second < 0 || second > 59) {
-                System.out.println("invalid time");
-                break; */
