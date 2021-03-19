@@ -3,18 +3,18 @@ public class Main {
 
         Time time = new Time(0, 0, 0);
 
-        time.setHour(23);
-        time.setMinute(30);
-        time.setSecond(59);
+        time.setHour(5);
+        time.setMinute(2);
+        time.setSecond(41);
 
         System.out.println(time);
 
-
-
-
-
-
     }
-
 }
 
+
+/*
+System.out.println(time.getHour());
+System.out.println(time.getMinute());
+System.out.println(time.getSecond());
+*/
