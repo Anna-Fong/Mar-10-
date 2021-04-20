@@ -11,10 +11,3 @@ public class Main {
 
     }
 }
-
-
-/*
-System.out.println(time.getHour());
-System.out.println(time.getMinute());
-System.out.println(time.getSecond());
-*/
